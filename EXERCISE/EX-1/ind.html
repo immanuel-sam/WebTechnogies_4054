@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Nomads - Image Mapping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            text-align: center;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+        h1 {
+            color: #333;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Explore the World as a Digital Nomad</h1>
+    <p>Click on the highlighted regions to discover top destinations for digital nomads.</p>
+    
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/World_map_-_low_resolution.svg/1920px-World_map_-_low_resolution.svg.png" 
+         usemap="#worldmap" alt="World Map">
+    
+    <map name="worldmap">
+        <!-- Europe -->
+        <area shape="rect" coords="750,250,850,300" 
+              alt="Europe - Co-working Spaces" 
+              href="https://www.coworker.com/europe" 
+              target="_blank">
+        
+        <!-- Southeast Asia -->
+        <area shape="rect" coords="1100,400,1200,450" 
+              alt="Southeast Asia - Travel Destinations" 
+              href="https://www.nomadlist.com/asia" 
+              target="_blank">
+        
+        <!-- North America -->
+        <area shape="rect" coords="250,200,400,300" 
+              alt="North America - Tech Hubs" 
+              href="https://www.nomadlist.com/north-america" 
+              target="_blank">
+        
+        <!-- South America -->
+        <area shape="rect" coords="400,400,500,500" 
+              alt="South America - Adventure Spots" 
+              href="https://www.nomadlist.com/south-america" 
+              target="_blank">
+    </map>
+</body>
+</html>

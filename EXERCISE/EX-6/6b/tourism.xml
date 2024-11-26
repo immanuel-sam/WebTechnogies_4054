@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tourism>
+    <destination>
+        <name>Paris</name>
+        <country>France</country>
+        <attractions>
+            <attraction>Eiffel Tower</attraction>
+            <attraction>Louvre Museum</attraction>
+        </attractions>
+    </destination>
+    <destination>
+        <name>Tokyo</name>
+        <country>Japan</country>
+        <attractions>
+            <attraction>Shibuya Crossing</attraction>
+            <attraction>Tokyo Tower</attraction>
+        </attractions>
+    </destination>
+</tourism>

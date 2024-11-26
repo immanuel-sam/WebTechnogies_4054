@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Nomads - Tourism</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to top left, rgb(255, 233, 174), rgb(125, 183, 255), rgb(142, 212, 229));
+            height: 100vh;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .time-container {
+            margin-bottom: 20px;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        .btn-custom {
+            background-color: #008080;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .btn-custom:hover {
+            background-color: #004d40;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #008080;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .hero {
+            background-image: url('https://source.unsplash.com/1600x900/?beach,digital-nomad,travel');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to the Digital Nomad Life!</h1>
+    </div>
+
+    <div class="container text-center">
+        <h1 class="mb-2">Experience Digital Nomad Travel</h1>
+
+        <!-- i) Dynamic Time Display -->
+        <div class="time-container">
+            <h2>Current Time: <span id="time"></span></h2>
+        </div>
+
+        <!-- ii) Display Text on Image Hover -->
+        <div class="image-container">
+            <img src="dnomad.jpg" alt="Digital Nomads" id="nomadImage" class="img-fluid" width="400">
+            <p id="imageText" style="visibility: hidden;">You are exploring the world of digital nomads!</p>
+        </div>
+
+        <!-- iii) Change Background Color on Click -->
+        <button id="button" class="btn-custom">Click to Change Background Color</button>
+
+        <!-- iv) Change Text on Hover -->
+        <p id="hoverText" onmouseover="changeText()" onmouseout="resetText()">Hover over this text to change it!</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Digital Nomads Tourism. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById("button");
+        // iii) Change the background color when the button is clicked
+        btn.addEventListener("click", () => {
+            const randomColor = 'rgb(' + Math.floor(Math.random() * 256) + ',' 
+                            + Math.floor(Math.random() * 256) + ',' 
+                            + Math.floor(Math.random() * 256) + ')';
+            document.body.style.backgroundColor = randomColor;
+        });
+
+        // i) Dynamic Time Display
+        function updateTime() {
+            const currentTime = new Date().toLocaleTimeString();
+            document.getElementById("time").textContent = currentTime;
+        }
+
+        // Update the time every second
+        setInterval(updateTime, 1000);
+
+        // ii) Display text when an image is hovered
+        const nomadImage = document.getElementById("nomadImage");
+        const imageText = document.getElementById("imageText");
+
+        nomadImage.addEventListener("mouseover", function() {
+            imageText.style.visibility = "visible";  // Show the text
+        });
+
+        nomadImage.addEventListener("mouseout", function() {
+            imageText.style.visibility = "hidden";  // Hide the text
+        });
+
+        // iv) Change the text when hovered
+        function changeText() {
+            document.getElementById("hoverText").textContent = "You're experiencing the digital nomad life!";
+        }
+
+        function resetText() {
+            document.getElementById("hoverText").textContent = "Hover over this text to change it!";
+        }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>
